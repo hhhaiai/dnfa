@@ -16,7 +16,7 @@ from starlette.responses import HTMLResponse
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-import deepinfra
+import no_works.deepinfra as deepinfra
 
 # debug for Log
 debug = False
@@ -24,7 +24,7 @@ debug = False
 app = FastAPI(
     title="dnfa",
     description="dnfa is a API service",
-    version="1.0.0|2025.6.22"
+    version="1.0.1|2025.6.23"
 )
 
 
