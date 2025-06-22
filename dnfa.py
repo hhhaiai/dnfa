@@ -257,7 +257,7 @@ def chat_completion(model, headers, payload):
         #     return parse_response(response.text)
         # return response.text\
 
-        return response.text
+        return parse_response(response.text)
     except requests.exceptions.RequestException as e:
         record_call(model, False)
         if debug:
