@@ -1,0 +1,11 @@
+aiohttp
+apscheduler
+beautifulsoup4
+fastapi
+requests
+starlette
+tiktoken
+urllib3
+uvicorn
+httptools
+uvloop==0.21.0; platform_system != 'Windows'
