@@ -1,18 +1,18 @@
 # dnfa
 
 
-deep in 
+dnfa
 
 ## build test use code
 
 ``` bash
-docker build --no-cache --compress -t tpp .
-docker run -p 7860:7860 -m 2g -e DEBUG=false tpp
+docker build --no-cache --compress -t dnfa .
+docker run -p 7860:7860 -m 2g -e DEBUG=false dnfa
 
 
 
 
-docker run -d --restart always  --name tp  -p 7860:7860 ghcr.io/hhhaiai/tp:latest
+docker run -d --restart always  --name tp  -p 7860:7860 ghcr.io/hhhaiai/dnfa:latest
 
 
 curl http://127.0.0.1:7860/v1/models
