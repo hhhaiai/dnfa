@@ -16,7 +16,7 @@ from starlette.responses import HTMLResponse
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-import no_works.deepinfra as deepinfra
+import dnfa as dnfa
 
 # debug for Log
 debug = False
@@ -68,7 +68,7 @@ class APIServer:
         def models():
             if debug:
                 print("Fetching models...")
-            models_str = deepinfra.get_models()
+            models_str = dnfa.get_models()
             try:
                 models_json = json.loads(models_str)
                 return JSONResponse(content=models_json)
@@ -80,7 +80,7 @@ class APIServer:
         def models():
             if debug:
                 print("Fetching models...")
-            models_str = deepinfra.get_models()
+            models_str = dnfa.get_models()
             try:
                 models_json = json.loads(models_str)
                 return JSONResponse(content=models_json)
@@ -200,7 +200,7 @@ class APIServer:
             # print(f"model: {model}")
             # just auto will check
             if "auto" == model:
-                model = deepinfra.get_auto_model()
+                model = dnfa.get_auto_model()
             # must has token ? token check
             authorization = headers.get('Authorization')
             token = os.getenv("TOKEN", "")
@@ -218,7 +218,7 @@ class APIServer:
                     print(f"request token: {token}")
                 print(f"request messages: {msgs}")
 
-            result = deepinfra.chat_completion_messages(
+            result = dnfa.chat_completion_messages(
                 messages=msgs,
                 model=model,
                 stream=False
@@ -264,7 +264,7 @@ class APIServer:
 
             return response_data
         except Exception as e:
-            deepinfra.record_call(model,False)
+            dnfa.record_call(model,False)
             if debug:
                 print(f"Response generation error: {e}")
             raise HTTPException(status_code=500, detail=str(e)) from e
@@ -306,7 +306,7 @@ class APIServer:
         server.run()
 
     def _reload_check(self) -> None:
-        deepinfra.reload_check()
+        dnfa.reload_check()
 
 
     def _reload_routes_if_needed(self) -> None:
