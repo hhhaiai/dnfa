@@ -1,8 +1,8 @@
 """
 https://chat9.yqcloud.top
 
-update time: 2025.06.22
-verson: 1.0.0
+update time: 2025.06.23
+verson: 1.0.2
 """
 import json
 import re
@@ -26,15 +26,11 @@ from datetime import datetime
 
 debug = True
 
-# 全局变量
-last_request_time = 0  # 上次请求的时间戳
-cache_duration = 14400  # 缓存有效期，单位：秒 (4小时)
-
 '''用于存储缓存的模型数据'''
 cached_models = {
     "object": "list",
     "data": [],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "provider": "dnfa",
     "name": "dnfa",
     "default_locale": "en-US",

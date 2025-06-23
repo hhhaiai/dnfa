@@ -24,7 +24,7 @@ debug = False
 app = FastAPI(
     title="dnfa",
     description="dnfa is a API service",
-    version="1.0.1|2025.6.23"
+    version="1.0.2|2025.6.24"
 )
 
 
